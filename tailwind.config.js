@@ -19,6 +19,7 @@ module.exports = {
         "lm-input-dGray": "hsl(0, 0%, 52%)",
         "lm-bg-vlGray": "hsl(0, 0%, 98%)",
         white: "hsl(0, 0%, 100%)",
+        "shadow-custom": "#00000014",
       },
       boxShadow: {
         "custom-1": "0 0 6px 1px rgb(0 0 0 / 0.1)",
@@ -26,6 +27,10 @@ module.exports = {
           "1px -1px 6px -1px rgb(0 0 0 / 0.1), -1px 0 6px -2px rgb(0 0 0 / 0.1)",
         "custom-3":
           "1px 1px 6px -1px rgb(0 0 0 / 0.1), -1px 0 6px -2px rgb(0 0 0 / 0.1)",
+        "custom-4":
+          "0 0 2px 2px rgb(0 0 0 / 0.1), 0 0 2px 2px rgb(0 0 0 / 0.1)",
+        "custom-5":
+          "0 0 4px 4px rgb(0 0 0 / 0.1), 0 0 4px 4px rgb(0 0 0 / 0.1)",
       },
       fontFamily: {
         sans: ["Nunito Sans", defaultTheme.fontFamily.sans],

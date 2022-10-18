@@ -10,7 +10,6 @@ export const ThemeProvider = ({ children }) => {
       ? element.classList.add("dark")
       : element.classList.remove("dark");
     localStorage.theme = theme;
-    console.log(theme);
   }, [theme]);
   return (
     <ThemeContext.Provider

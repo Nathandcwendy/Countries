@@ -18,6 +18,7 @@ const useAxiosFetch = (dataUrl) => {
         });
         if (isMounted) {
           setData(response.data);
+          console.log(response.data);
           setFetchError(null);
         }
       } catch (err) {
@@ -40,7 +41,7 @@ const useAxiosFetch = (dataUrl) => {
     return cleanUp;
   }, [dataUrl]);
 
-  return { data, fetchError, isLoading };
+  return { data, isLoading, fetchError };
 };
 
 export default useAxiosFetch;
