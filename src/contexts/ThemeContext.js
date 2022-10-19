@@ -11,6 +11,13 @@ export const ThemeProvider = ({ children }) => {
       : element.classList.remove("dark");
     localStorage.theme = theme;
   }, [theme]);
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (event) => {
+      const newColorScheme = event.matches ? "dark" : "light";
+      setTheme(newColorScheme);
+    });
   return (
     <ThemeContext.Provider
       value={{

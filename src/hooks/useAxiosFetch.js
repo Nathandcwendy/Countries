@@ -18,7 +18,6 @@ const useAxiosFetch = (dataUrl) => {
         });
         if (isMounted) {
           setData(response.data);
-          console.log(response.data);
           setFetchError(null);
         }
       } catch (err) {

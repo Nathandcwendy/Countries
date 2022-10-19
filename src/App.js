@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { Route, Routes } from "react-router-dom";
 import { DataProvider } from "./contexts/DataContext";
+import Missing from "./components/Missing";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<HomeFeed />} />
+            <Route path="/" element={<HomeFeed />} />
             <Route path="country/:id" element={<CountryPage />} />
+            <Route path="*" element={<Missing />} />
           </Route>
         </Routes>
       </DataProvider>

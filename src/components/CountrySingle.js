@@ -1,10 +1,11 @@
 import React from "react";
 
 const CountrySingle = ({ country, data }) => {
-  const languages = Object.entries(country.languages).map(
-    ([key, value]) => value
-  );
+  let languages = [];
 
+  if (country.languages) {
+    languages = Object.entries(country.languages).map(([key, value]) => value);
+  }
   const borders = country.borders;
   let borderIndex = [];
 
@@ -12,74 +13,86 @@ const CountrySingle = ({ country, data }) => {
     borderIndex = data.filter((countries) => borders.includes(countries.cca3));
   }
 
+  let populationValue;
+
+  if (country.population) {
+    populationValue = new Intl.NumberFormat("en-US").format(country.population);
+  }
+
   return (
-    <article className="flex overflow-hidden h-full w-full">
-      <div className="flex items-center gap-x-20 h-[400px]">
+    <article className="flex overflow-hidden h-full w-full text-base">
+      <div className="flex flex-1 items-center flex-col 2lg:flex-row gap-y-12 2lg:gap-y-0 2lg:gap-x-4 3lg:gap-x-20 h-auto">
         <div className="bg-white dark:bg-dm-dBlue shadow-custom-1 flex-1">
           <img
             src={country.flags.svg}
             alt=""
-            className="object-cover w-full h-full"
+            className="object-cover w-screen ssm:w-full aspect-auto ssm:aspect-video md:aspect-auto h-full min-h-[200px] max-h-[200px] mdsm:min-h-[300px] mdsm:max-h-[300px] md:min-h-[400px] md:max-h-[400px]"
           />
         </div>
-        <div className="flex flex-col p-6 gap-y-8 flex-1">
-          <h3 className="font-extrabold text-3xl">{country.name.common}</h3>
-          <div className="flex gap-x-28 mb-12">
-            <div className="flex flex-col gap-y-2">
-              <p className="text-sm">
-                <span className="font-bold text-base">Native Name: </span>
-                {
-                  country.name.nativeName[
-                    Object.keys(country.name.nativeName)[0]
-                  ].official
-                }
+        <div className="flex flex-col 2lg:p-6 gap-y-8 flex-1 w-full lg:w-5/6 2lg:w-auto">
+          <h3 className="font-extrabold text-3xl">
+            {country.name.common ? country.name.common : "N/A"}
+          </h3>
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-y-12 sm:gap-y-0 2lg:justify-start sm:gap-x-4 2lg:gap-x-12 3lg:gap-x-28 mb-4 sm:mb-8">
+            <div className="flex 2lg:w-7/12 flex-col gap-y-2">
+              <p>
+                <span className="font-bold ">Native Name: </span>
+                {country.name.nativeName
+                  ? country.name.nativeName[
+                      Object.keys(country.name.nativeName)[0]
+                    ].official
+                  : "N/A"}
               </p>
-              <p className="text-base">
-                <span className="font-bold text-base">Population: </span>
-                {country.population}
+              <p>
+                <span className="font-bold">Population: </span>
+                {country.population ? populationValue : "N/A"}
               </p>
-              <p className="text-base">
-                <span className="font-bold text-base">Region: </span>
-                {country.region}
+              <p>
+                <span className="font-bold">Region: </span>
+                {country.region ? country.region : "N/A"}
               </p>
-              <p className="text-base">
-                <span className="font-bold text-base">Sub Region: </span>
-                {country.subregion}
+              <p>
+                <span className="font-bold">Sub Region: </span>
+                {country.subregion ? country.subregion : "N/A"}
               </p>
-              <p className="text-base">
-                <span className="font-bold text-base">Capital: </span>
-                {country.capital}
+              <p>
+                <span className="font-bold">Capital: </span>
+                {country.capital ? country.capital : "N/A"}
               </p>
             </div>
-            <div className="flex flex-col gap-y-2">
-              <p className="text-base">
-                <span className="font-bold text-base">Top Level Domain: </span>
-                {country.tld}
+            <div className="flex 2lg:w-5/12 flex-col gap-y-2">
+              <p>
+                <span className="font-bold">Top Level Domain: </span>
+                {country.tld ? country.tld : "N/A"}
               </p>
-              <p className="text-base">
-                <span className="font-bold text-base">Currencies: </span>
-                {country.currencies[Object.keys(country.currencies)[0]].name}
+              <p>
+                <span className="font-bold">Currencies: </span>
+                {country.currencies
+                  ? country.currencies[Object.keys(country.currencies)[0]].name
+                  : "N/A"}
               </p>
-              <p className="text-base">
-                <span className="font-bold text-base">Languages: </span>
-                {languages.reverse().join(", ")}
+              <p>
+                <span className="font-bold">Languages: </span>
+                {languages.length !== 0
+                  ? languages.reverse().join(", ")
+                  : "N/A"}
               </p>
             </div>
           </div>
-          <div className="flex gap-x-4 items-center">
+          <div className="flex flex-col gap-y-2 mdsm:gap-y-0 mdsm:flex-row mdsm:gap-x-4 mdsm:items-center">
             <p className="font-bold min-w-max">Border Countries:</p>
-            <div className="flex gap-2 flex-wrap items-center">
+            <div className="flex p-1 gap-2 flex-wrap mdsm:items-center">
               {country.borders ? (
-                borderIndex.map((border, index) => (
+                borderIndex.reverse().map((border, index) => (
                   <span
                     key={index}
-                    className="bg-white dark:bg-dm-dBlue p-1 px-6 shadow-custom-4 shadow-shadow-custom"
+                    className="bg-white dark:bg-dm-dBlue py-[.1rem] text-sm ssm:text-base px-4 shadow-custom-4 shadow-shadow-custom"
                   >
                     {border.name.common}
                   </span>
                 ))
               ) : (
-                <span className="bg-white dark:bg-dm-dBlue p-1 px-6 shadow-custom-4 shadow-shadow-custom">
+                <span className="bg-white dark:bg-dm-dBlue py-[.1rem] text-sm ssm:text-base px-4 shadow-custom-4 shadow-shadow-custom">
                   No Bordering Country
                 </span>
               )}

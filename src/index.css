@@ -6,7 +6,7 @@
 
 @layer utilities {
   .sync-padding {
-    padding-inline: 4rem;
+    @apply sm:px-16 mdsm:px-8 px-6;
   }
 }
 
