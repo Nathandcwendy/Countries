@@ -12,7 +12,7 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="/" element={<HomeFeed />} />
+            <Route index element={<HomeFeed />} />
             <Route path="country/:id" element={<CountryPage />} />
             <Route path="*" element={<Missing />} />
           </Route>
