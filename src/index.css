@@ -6,7 +6,7 @@
 
 @layer utilities {
   .sync-padding {
-    @apply sm:px-16 mdsm:px-8 px-6;
+    @apply sm:px-24 mdsm:px-8 px-6;
   }
 }
 

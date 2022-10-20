@@ -11,7 +11,7 @@ const Country = ({ data, index }) => {
   return (
     <Link to={`/country/${index}`}>
       <article
-        className="flex flex-col overflow-hidden h-[450px] md:h-[375px] bg-white dark:bg-dm-dBlue rounded-lg shadow-custom-1"
+        className="flex flex-col overflow-hidden h-[450px] md:h-[360px] bg-white dark:bg-dm-dBlue rounded-lg shadow-custom-1"
         id={`country${index}`}
       >
         <div className="flex bg-white dark:bg-dm-dBlue h-1/2 w-full items-stretch">
@@ -21,21 +21,21 @@ const Country = ({ data, index }) => {
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="h-1/2 flex flex-col p-6 gap-y-4 text-base">
-          <h3 className="font-extrabold text-xl">
+        <div className="h-1/2 flex flex-col p-6 gap-y-4 md:gap-y-3 text-sm">
+          <h3 className="font-extrabold text-lg">
             {data.name.common ? data.name.common : "N/A"}
           </h3>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-y-2 2lg:gap-y-1">
             <p>
-              <span className="font-bold">Population: </span>
+              <span className="font-semibold">Population: </span>
               {data.population ? populationValue : "N/A"}
             </p>
             <p>
-              <span className="font-bold">Region: </span>
+              <span className="font-semibold">Region: </span>
               {data.region ? data.region : "N/A"}
             </p>
             <p>
-              <span className="font-bold">Capital: </span>
+              <span className="font-semibold">Capital: </span>
               {data.capital ? data.capital : "N/A"}
             </p>
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CountrySingle = ({ country, data }) => {
   let languages = [];
@@ -19,9 +20,15 @@ const CountrySingle = ({ country, data }) => {
     populationValue = new Intl.NumberFormat("en-US").format(country.population);
   }
 
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+
+  console.log(country);
+
   return (
     <article className="flex overflow-hidden h-full w-full text-base">
-      <div className="flex flex-1 items-center flex-col 2lg:flex-row gap-y-12 2lg:gap-y-0 2lg:gap-x-4 3lg:gap-x-20 h-auto">
+      <div className="flex flex-1 items-center flex-col 2lg:flex-row gap-y-12 2lg:gap-y-0 2lg:gap-x-4 3lg:gap-x-28 h-auto">
         <div className="bg-white dark:bg-dm-dBlue shadow-custom-1 flex-1">
           <img
             src={country.flags.svg}
@@ -33,14 +40,18 @@ const CountrySingle = ({ country, data }) => {
           <h3 className="font-extrabold text-3xl">
             {country.name.common ? country.name.common : "N/A"}
           </h3>
-          <div className="flex flex-col sm:flex-row sm:justify-between gap-y-12 sm:gap-y-0 2lg:justify-start sm:gap-x-4 2lg:gap-x-12 3lg:gap-x-28 mb-4 sm:mb-8">
-            <div className="flex 2lg:w-7/12 flex-col gap-y-2">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-y-12 sm:gap-y-0 2lg:justify-start sm:gap-x-4 2lg:gap-x-12 3lg:gap-x-10 mb-4 sm:mb-8">
+            <div className="flex 2lg:w-6/12 flex-col gap-y-2">
               <p>
                 <span className="font-bold ">Native Name: </span>
                 {country.name.nativeName
-                  ? country.name.nativeName[
-                      Object.keys(country.name.nativeName)[0]
-                    ].official
+                  ? Object.keys(country.name.nativeName)[2]
+                    ? country.name.nativeName[
+                        Object.keys(country.name.nativeName)[2]
+                      ].common
+                    : country.name.nativeName[
+                        Object.keys(country.name.nativeName)[0]
+                      ].common
                   : "N/A"}
               </p>
               <p>
@@ -60,7 +71,7 @@ const CountrySingle = ({ country, data }) => {
                 {country.capital ? country.capital : "N/A"}
               </p>
             </div>
-            <div className="flex 2lg:w-5/12 flex-col gap-y-2">
+            <div className="flex 2lg:w-6/12 flex-col gap-y-2">
               <p>
                 <span className="font-bold">Top Level Domain: </span>
                 {country.tld ? country.tld : "N/A"}
@@ -83,13 +94,12 @@ const CountrySingle = ({ country, data }) => {
             <p className="font-bold min-w-max">Border Countries:</p>
             <div className="flex p-1 gap-2 flex-wrap mdsm:items-center">
               {country.borders ? (
-                borderIndex.reverse().map((border, index) => (
-                  <span
-                    key={index}
-                    className="bg-white dark:bg-dm-dBlue py-[.1rem] text-sm ssm:text-base px-4 shadow-custom-4 shadow-shadow-custom"
-                  >
-                    {border.name.common}
-                  </span>
+                borderIndex.map((border, index) => (
+                  <Link key={index} to={`../country/${border.trueIndex}`}>
+                    <span className="bg-white dark:bg-dm-dBlue py-[.15rem] text-sm ssm:text-base px-4 shadow-custom-4 shadow-shadow-custom">
+                      {border.name.common}
+                    </span>
+                  </Link>
                 ))
               ) : (
                 <span className="bg-white dark:bg-dm-dBlue py-[.1rem] text-sm ssm:text-base px-4 shadow-custom-4 shadow-shadow-custom">

@@ -5,8 +5,8 @@ import ThemeContext from "../contexts/ThemeContext";
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
-    <header className="sync-padding w-full flex justify-between items-center bg-white dark:bg-dm-dBlue py-4 shadow-custom-4 shadow-shadow-custom  dark:text-white">
-      <h1 className="text-base ssm:text-2xl mdsm:text-3xl font-extrabold">
+    <header className="sync-padding w-full flex justify-between items-center bg-white dark:bg-dm-dBlue py-6 shadow-custom-4 shadow-shadow-custom  dark:text-white">
+      <h1 className="text-base ssm:text-2xl mdsm:text-2xl font-extrabold">
         Where in the world?
       </h1>
       <div
@@ -20,7 +20,7 @@ const Header = () => {
         ) : (
           <IoMoonSharp />
         )}
-        <p className="font-bold text-base mdsm:text-lg sr-only xsm:not-sr-only">
+        <p className="font-bold text-base mdsm:text-base sr-only xsm:not-sr-only">
           Dark Mode
         </p>
       </div>

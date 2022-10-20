@@ -6,28 +6,27 @@ const DataContext = createContext({});
 export const DataProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
+  const [finalResults, setFinalResults] = useState([]);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("Filter By Region");
+  const [filter, setFilter] = useState("Filter by Region");
 
   useEffect(() => {
     if (search === "") {
-      setFilteredResults(countries);
-      setFilter("Filter By Region");
+      setFinalResults(filteredResults);
     } else if (search !== "") {
-      const searchResults = countries.filter(
+      const searchResults = filteredResults.filter(
         (country) =>
           country.name.common.toLowerCase().includes(search.toLowerCase()) ||
           country.name.official.toLowerCase().includes(search.toLowerCase())
       );
-      setFilteredResults(searchResults);
-      setFilter("Filter By Region");
+      setFinalResults(searchResults);
     } else {
       return;
     }
-  }, [countries, search]);
+  }, [countries, search, filteredResults]);
 
   useEffect(() => {
-    if (filter === "Filter By Region" || filter === "All") {
+    if (filter === "Filter by Region" || filter === "All") {
       setFilteredResults(countries);
     } else {
       const result = countries.filter((country) =>
@@ -42,19 +41,19 @@ export const DataProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    const indexedData = data.sort((a, b) => {
-      const nameA = a.name.common.toUpperCase(); // ignore upper and lowercase
-      const nameB = b.name.common.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
+    const indexedData = data.sort((a, b) =>
+      // const nameA = a.name.common.toUpperCase();
+      // const nameB = b.name.common.toUpperCase();
+      // if (nameA < nameB) {
+      //   return -1;
+      // }
+      // if (nameA > nameB) {
+      //   return 1;
+      // }
 
-      // names must be equal
-      return 0;
-    });
+      // return 0;
+      a.name.common.toUpperCase().localeCompare(b.name.common.toUpperCase())
+    );
     indexedData.map((dataUnit, index) => {
       dataUnit.trueIndex = index;
       return dataUnit;
@@ -68,8 +67,8 @@ export const DataProvider = ({ children }) => {
         countries,
         isLoading,
         fetchError,
-        filteredResults,
-        setFilteredResults,
+        finalResults,
+        setFinalResults,
         search,
         setSearch,
         filter,
