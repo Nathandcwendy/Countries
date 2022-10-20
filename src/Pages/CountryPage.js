@@ -1,10 +1,10 @@
 import { React, useContext } from "react";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom";
-import CountrySingle from "./CountrySingle";
+import CountrySingle from "../components/CountrySingle";
 import DataContext from "../contexts/DataContext";
-import ErrorPage from "./ErrorPage";
-import LoadingCountry from "./LoadingCountry";
+import ErrorPage from "../components/Error";
+import LoadingCountry from "../components/LoadingCountry";
 
 const CountryPage = () => {
   const { countries, isLoading, fetchError, filter, setFilter } =

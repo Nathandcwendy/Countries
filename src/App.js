@@ -1,5 +1,5 @@
-import HomeFeed from "./components/HomeFeed";
-import CountryPage from "./components/CountryPage";
+import HomeFeed from "./Pages/HomeFeed";
+import CountryPage from "./Pages/CountryPage";
 import Layout from "./components/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { Route, Routes } from "react-router-dom";

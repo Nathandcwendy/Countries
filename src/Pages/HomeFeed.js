@@ -1,10 +1,10 @@
 import { React, useRef, useContext } from "react";
-import Country from "./Country";
+import Country from "../components/Country";
 import { IoChevronDown, IoSearchOutline } from "react-icons/io5";
 import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
-import Loading from "./Loading";
+import Loading from "../components/Loading";
 import DataContext from "../contexts/DataContext";
-import ErrorPage from "./ErrorPage";
+import ErrorPage from "../components/Error";
 
 const HomeFeed = () => {
   const {
@@ -202,7 +202,7 @@ const HomeFeed = () => {
       </div>
 
       <FaArrowCircleUp
-        className="hidden fixed bottom-[25%] right-4 3xl:right-48 4xl:right-96 font-bold text-3xl lg:text-4xl hover:cursor-pointer"
+        className="fixed bottom-[20%] right-2 sm:right-4 3xl:right-48 4xl:right-96 font-bold text-3xl lg:text-4xl hover:cursor-pointer z-10"
         onClick={() => {
           window.scrollTo({
             top: 0,
@@ -212,7 +212,7 @@ const HomeFeed = () => {
         }}
       />
       <FaArrowCircleDown
-        className="hidden fixed bottom-[15%] right-4 3xl:right-48 4xl:right-96 font-bold text-3xl lg:text-4xl hover:cursor-pointer"
+        className="fixed bottom-[12.5%] right-2 sm:right-4 3xl:right-48 4xl:right-96 font-bold text-3xl lg:text-4xl hover:cursor-pointer z-10"
         onClick={() => {
           window.scrollTo({
             top: document.body.scrollHeight,
