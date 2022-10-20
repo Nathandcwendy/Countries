@@ -51,7 +51,7 @@ const HomeFeed = () => {
           </div>
           <div className="w-2/3 self-start sm:self-auto sm:w-1/3 md:w-5/12 2lg:w-2/12 min-w-max 3lg:w-max text-base md:text-sm relative z-10">
             <div
-              className=" relative flex items-center justify-between gap-x-8 bg-white dark:bg-dm-dBlue p-4 px-6 3lg:px-4 rounded-md shadow-custom-2 shadow-shadow-custom hover:cursor-pointer z-20 min-w-max font-medium"
+              className=" relative flex items-center justify-between gap-x-12 bg-white dark:bg-dm-dBlue p-4 px-6 3lg:px-4 rounded-md shadow-custom-2 shadow-shadow-custom hover:cursor-pointer z-20 min-w-max font-medium"
               onClick={handleAccordion}
             >
               <h2>{filter}</h2>
@@ -177,7 +177,7 @@ const HomeFeed = () => {
           ) : !isLoading && fetchError ? (
             <ErrorPage fetchError={fetchError} />
           ) : (
-            <section className="w-11/12 mdsm:w-[500px] md:w-full h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3lg:grid-cols-4 gap-12 md:gap-[4.5rem]">
+            <section className="w-11/12 mdsm:w-[500px] md:w-full h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3lg:grid-cols-4 gap-12 md:gap-x-[4.5rem] md:gap-y-[4.55rem]">
               <h2 className="sr-only">Countries</h2>
               {finalResults.length === 0 && search.length !== 0 ? (
                 <p className="text-2xl col-span-2 tracking-widest font-bold">
