@@ -60,7 +60,7 @@ const HomeFeed = () => {
             {filter === "Filter by Region" ? (
               <ul
                 ref={accordionRef}
-                className="absolute top-[3.75rem] md:top-14 left-0 w-full h-auto flex flex-col items-start gap-y-2 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-3 shadow-shadow-custom transform z-10"
+                className="absolute top-[3.75rem] md:top-14 left-0 w-full h-auto hidden flex-col items-start gap-y-2 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-3 shadow-shadow-custom transform z-10"
               >
                 <li
                   className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg  hover:cursor-pointer"
