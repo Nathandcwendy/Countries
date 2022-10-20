@@ -51,16 +51,16 @@ const HomeFeed = () => {
           </div>
           <div className="w-2/3 self-start sm:self-auto sm:w-1/3 md:w-5/12 2lg:w-2/12 text-base md:text-sm relative z-10">
             <div
-              className=" relative flex items-center justify-between gap-x-8 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-2 shadow-shadow-custom hover:cursor-pointer z-20 min-w-[213px]"
+              className=" relative flex items-center justify-between gap-x-8 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-2 shadow-shadow-custom hover:cursor-pointer z-20 min-w-[213px] font-medium"
               onClick={handleAccordion}
             >
-              <h2 className="font-semibold">{filter}</h2>
+              <h2>{filter}</h2>
               <IoChevronDown />
             </div>
             {filter === "Filter by Region" ? (
               <ul
                 ref={accordionRef}
-                className="absolute top-[3.75rem] md:top-16 left-0 w-full h-auto hidden flex-col items-start gap-y-2 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-4 shadow-shadow-custom transform font-semibold z-10"
+                className="absolute top-[3.75rem] md:top-14 left-0 w-full h-auto flex flex-col items-start gap-y-2 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-4 shadow-shadow-custom transform z-10"
               >
                 <li
                   className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg  hover:cursor-pointer"
@@ -111,7 +111,7 @@ const HomeFeed = () => {
             ) : (
               <ul
                 ref={accordionRef}
-                className="flex absolute top-[3.75rem] md:top-16 left-0 w-full h-auto flex-col items-start gap-y-2 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-4 shadow-shadow-custom transform font-semibold z-10"
+                className="flex absolute top-[3.75rem] md:top-14 left-0 w-full h-auto flex-col items-start gap-y-2 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-4 shadow-shadow-custom transform z-10"
               >
                 <li
                   className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer"
@@ -177,7 +177,7 @@ const HomeFeed = () => {
           ) : !isLoading && fetchError ? (
             <ErrorPage fetchError={fetchError} />
           ) : (
-            <section className="w-11/12 mdsm:w-[500px] md:w-full h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3lg:grid-cols-4 gap-12 md:gap-16">
+            <section className="w-11/12 mdsm:w-[500px] md:w-full h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3lg:grid-cols-4 gap-12 md:gap-[4.5rem]">
               <h2 className="sr-only">Countries</h2>
               {finalResults.length === 0 && search.length !== 0 ? (
                 <p className="text-2xl col-span-2 tracking-widest font-bold">

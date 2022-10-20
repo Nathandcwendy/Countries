@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer utilities {
   .sync-padding {
-    @apply sm:px-24 mdsm:px-8 px-6;
+    @apply sm:px-20 mdsm:px-8 px-6;
   }
 }
 

@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/rest-api-countries-page-with-clientside-routing-PoJLpJpDAP](https://www.frontendmentor.io/solutions/rest-api-countries-page-with-clientside-routing-PoJLpJpDAP)
+- Live Site URL: [https://countries-nate.netlify.app/](https://countries-nate.netlify.app/)
 
 ### Built with
 
