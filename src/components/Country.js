@@ -11,17 +11,17 @@ const Country = ({ data, index }) => {
   return (
     <Link to={`/country/${index}`}>
       <article
-        className="flex flex-col overflow-hidden h-[450px] md:h-[345px] bg-white dark:bg-dm-dBlue rounded-lg shadow-custom-1"
+        className="flex flex-col overflow-hidden h-[450px] md:h-[325px] bg-white dark:bg-dm-dBlue rounded-lg shadow-custom-1"
         id={`country${index}`}
       >
-        <div className="flex bg-white dark:bg-dm-dBlue h-1/2 w-full items-stretch">
+        <div className="flex bg-white dark:bg-dm-dBlue h-1/2 3lg:h-[47.5%] w-full items-stretch">
           <img
             src={data.flags.svg}
             alt=""
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="h-1/2 flex flex-col p-6 gap-y-4 md:gap-y-3 text-sm">
+        <div className="h-1/2 3lg:h-[52.5%] flex flex-col p-6 gap-y-4 md:gap-y-3 text-sm">
           <h3 className="font-extrabold text-lg">
             {data.name.common ? data.name.common : "N/A"}
           </h3>
