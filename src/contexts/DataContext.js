@@ -16,8 +16,12 @@ export const DataProvider = ({ children }) => {
     } else if (search !== "") {
       const searchResults = filteredResults.filter(
         (country) =>
-          country.name.common.toLowerCase().includes(search.toLowerCase()) ||
-          country.name.official.toLowerCase().includes(search.toLowerCase())
+          country.name.common
+            .toLowerCase()
+            .includes(search.toLowerCase().trim()) ||
+          country.name.official
+            .toLowerCase()
+            .includes(search.toLowerCase().trim())
       );
       setFinalResults(searchResults);
     } else {
