@@ -54,7 +54,7 @@ const HomeFeed = () => {
               className=" relative flex items-center justify-between gap-x-12 bg-white dark:bg-dm-dBlue p-4 px-6 3lg:px-4 rounded-md shadow-custom-2 shadow-shadow-custom hover:cursor-pointer z-20 min-w-max font-medium"
               onClick={handleAccordion}
             >
-              <h2>{filter}</h2>
+              <h2 className="min-w-[14ch]">{filter}</h2>
               <IoChevronDown />
             </div>
             {filter === "Filter by Region" ? (
@@ -63,7 +63,7 @@ const HomeFeed = () => {
                 className="absolute top-[3.75rem] md:top-14 left-0 w-full h-auto hidden flex-col items-start gap-y-2 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-3 shadow-shadow-custom transform z-10"
               >
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg  hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg transition-all duration-200 delay-75 hover:cursor-pointer"
                   data-name="Africa"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -72,7 +72,7 @@ const HomeFeed = () => {
                   Africa
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg  hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg transition-all duration-200 delay-75 hover:cursor-pointer"
                   data-name="America"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -81,7 +81,7 @@ const HomeFeed = () => {
                   America
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg  hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg transition-all duration-200 delay-75 hover:cursor-pointer"
                   data-name="Asia"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -90,7 +90,7 @@ const HomeFeed = () => {
                   Asia
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg  hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg transition-all duration-200 delay-75 hover:cursor-pointer"
                   data-name="Europe"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -99,7 +99,7 @@ const HomeFeed = () => {
                   Europe
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg  hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg transition-all duration-200 delay-75 hover:cursor-pointer"
                   data-name="Oceania"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -114,7 +114,7 @@ const HomeFeed = () => {
                 className="flex absolute top-[3.75rem] md:top-14 left-0 w-full h-auto flex-col items-start gap-y-2 bg-white dark:bg-dm-dBlue p-4 px-6 rounded-md shadow-custom-4 shadow-shadow-custom transform z-10"
               >
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer transition-all duration-200 delay-75"
                   data-name="Africa"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -123,7 +123,7 @@ const HomeFeed = () => {
                   Africa
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer transition-all duration-200 delay-75"
                   data-name="America"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -132,7 +132,7 @@ const HomeFeed = () => {
                   America
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer transition-all duration-200 delay-75"
                   data-name="Asia"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -141,7 +141,7 @@ const HomeFeed = () => {
                   Asia
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer transition-all duration-200 delay-75"
                   data-name="Europe"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -150,7 +150,7 @@ const HomeFeed = () => {
                   Europe
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer transition-all duration-200 delay-75"
                   data-name="Oceania"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
@@ -159,7 +159,7 @@ const HomeFeed = () => {
                   Oceania
                 </li>
                 <li
-                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer"
+                  className="hover:opacity-50 w-full transform hover:font-extrabold hover:text-lg md:hover:text-lg hover:cursor-pointer transition-all duration-200 delay-75"
                   data-name="All"
                   onClick={(e) => {
                     setFilter(e.target.dataset.name);
