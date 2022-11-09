@@ -7,7 +7,7 @@ const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
     <header className="sync-padding w-full flex justify-between items-center bg-white dark:bg-dm-dBlue py-6 shadow-custom-4 shadow-shadow-custom  dark:text-white">
-      <Link to={"/"}>
+      <Link preventScrollReset={true} to={"/"}>
         <h1 className="text-base ssm:text-2xl mdsm:text-2xl font-extrabold">
           Where in the world?
         </h1>

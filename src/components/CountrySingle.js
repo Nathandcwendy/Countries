@@ -20,10 +20,6 @@ const CountrySingle = ({ country, data }) => {
     populationValue = new Intl.NumberFormat("en-US").format(country.population);
   }
 
-  if ("scrollRestoration" in window.history) {
-    window.history.scrollRestoration = "manual";
-  }
-
   return (
     <article className="flex overflow-hidden h-full w-full text-base">
       <div className="flex flex-1 items-center flex-col 2lg:flex-row gap-y-12 2lg:gap-y-0 2lg:gap-x-4 3lg:gap-x-28 h-auto">
