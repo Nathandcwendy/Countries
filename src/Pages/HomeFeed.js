@@ -1,4 +1,4 @@
-import { React, useRef, useContext } from "react";
+import { React, useRef, useContext, useState, useEffect} from "react";
 import Country from "../components/Country";
 import { IoChevronDown, IoSearchOutline } from "react-icons/io5";
 import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
@@ -24,6 +24,42 @@ const HomeFeed = () => {
     accordionRef.current.classList.toggle("flex");
     accordionRef.current.classList.toggle("hidden");
   };
+  // const [arrayLength, setArrayLength] = useState(25)
+  const [splicedResults, setSplicedResults] = useState(finalResults.slice(0, 15))
+
+  // useEffect(() => {
+  //   setSplicedResults(finalResults.slice(0, arrayLength))
+  // }, [arrayLength, finalResults])
+  
+  useEffect(() => {
+      setSplicedResults(finalResults)
+  }, [finalResults])
+  
+  // useEffect(() => {
+  //   const countryElement = document.querySelector(`#country5`)
+  //   countryElement.scrollIntoView()
+  // }, [splicedResults])
+
+  // useEffect(() => {
+  //   if (window.innerHeight > 1000) {
+  //     setSplicedResults(finalResults)
+  //     }
+  // }, [finalResults])
+
+  // window.onscroll = () => {
+  //   if (window.scrollY > document.body.scrollHeight / 4) {
+
+  //     if (arrayLength < finalResults.length) {
+  //       let newLength = arrayLength + 25
+  //       if (newLength > finalResults.length) {
+  //         newLength = finalResults.length
+  //         setArrayLength(newLength)
+  //       } else {
+  //         setArrayLength(newLength)
+  //       }
+  //     } 
+  //   } 
+  // }
 
   return (
     <main className="w-full text-black dark:text-neutral-300">
@@ -185,7 +221,7 @@ const HomeFeed = () => {
                 </p>
               ) : (
                 <>
-                  {finalResults.map((dataUnit, index) => {
+                  {splicedResults.map((dataUnit, index) => {
                     return (
                       <Country
                         key={index}
@@ -193,7 +229,8 @@ const HomeFeed = () => {
                         index={dataUnit.trueIndex}
                       />
                     );
-                  })}
+                  })}   
+                  
                 </>
               )}
             </section>
