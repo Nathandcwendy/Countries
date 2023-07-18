@@ -11,7 +11,7 @@ const Country = ({ data, index }) => {
   return (
     <Link to={`/country/${index}`}>
       <article
-        className="flex flex-col overflow-hidden h-[450px] md:h-[330px] bg-white dark:bg-dm-dBlue rounded-lg shadow-custom-1"
+        className="flex flex-col overflow-hidden h-[450px] md:h-[330px] bg-white dark:bg-dm-dBlue rounded-lg shadow-custom-1 animate__animated animate__fadeIn animate__fast"
         id={`country${index}`}
       >
         <div className="flex bg-white dark:bg-dm-dBlue h-1/2 3lg:h-[47.5%] w-full items-stretch">

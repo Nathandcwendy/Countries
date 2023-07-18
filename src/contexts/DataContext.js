@@ -46,16 +46,6 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     const indexedData = data.sort((a, b) =>
-      // const nameA = a.name.common.toUpperCase();
-      // const nameB = b.name.common.toUpperCase();
-      // if (nameA < nameB) {
-      //   return -1;
-      // }
-      // if (nameA > nameB) {
-      //   return 1;
-      // }
-
-      // return 0;
       a.name.common.toUpperCase().localeCompare(b.name.common.toUpperCase())
     );
     indexedData.map((dataUnit, index) => {

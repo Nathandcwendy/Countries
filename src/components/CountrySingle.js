@@ -23,14 +23,14 @@ const CountrySingle = ({ country, data }) => {
   return (
     <article className="flex overflow-hidden h-full w-full text-base">
       <div className="flex flex-1 items-center flex-col 2lg:flex-row gap-y-12 2lg:gap-y-0 2lg:gap-x-4 3lg:gap-x-28 h-auto">
-        <div className="bg-white dark:bg-dm-dBlue shadow-custom-1 flex-1">
+        <div className="bg-white dark:bg-dm-dBlue shadow-custom-1 flex-1 animate__animated animate__fadeInLeft animate__faster">
           <img
             src={country.flags.svg}
             alt=""
             className="object-cover w-screen ssm:w-full aspect-auto ssm:aspect-video md:aspect-auto h-full min-h-[200px] max-h-[200px] mdsm:min-h-[300px] mdsm:max-h-[300px] md:min-h-[400px] md:max-h-[400px]"
           />
         </div>
-        <div className="flex flex-col 2lg:p-6 gap-y-8 flex-1 w-full lg:w-5/6 2lg:w-auto">
+        <div className="flex flex-col 2lg:p-6 gap-y-8 flex-1 w-full lg:w-5/6 2lg:w-auto animate__animated animate__fadeInRight animate__faster">
           <h3 className="font-extrabold text-3xl">
             {country.name.common ? country.name.common : "N/A"}
           </h3>

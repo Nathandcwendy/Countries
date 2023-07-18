@@ -56,9 +56,35 @@ module.exports = {
       fontFamily: {
         sans: ["Nunito Sans", defaultTheme.fontFamily.sans],
       },
-
       screens: {
         tall: { raw: "(min-height: 600px)" },
+      },
+      keyframes: {
+        expandDown: {
+          "0%": {
+            height: "0px",
+            padding: "0 1.5rem",
+          },
+          "100%": {
+            height: "216px",
+            padding: "1rem 1.5rem",
+          },
+        },
+        contractUp: {
+          "0%": {
+            height: "216px",
+            padding: "1rem 1.5rem",
+          },
+          "100%": {
+            height: "0px",
+            padding: "0 1.5rem",
+            display: "none",
+          },
+        },
+      },
+      animation: {
+        expandDown: "expandDown 0.2s ease-in-out 1 forwards",
+        contractUp: "contractUp 0.2s ease-in-out 1 forwards",
       },
     },
   },

@@ -12,21 +12,27 @@ const useAxiosFetch = (dataUrl) => {
 
     const fetchData = async (url) => {
       setIsLoading(true);
-      try {
-        const response = await axios.get(url, {
-          cancelToken: source.token,
-        });
-        if (isMounted) {
-          setData(response.data);
-          setFetchError(null);
+      if (!localStorage.countries || localStorage.countries.length <= 0) {
+        try {
+          const response = await axios.get(url, {
+            cancelToken: source.token,
+          });
+          if (isMounted) {
+            setData(response.data);
+            setFetchError(null);
+          }
+        } catch (err) {
+          if (isMounted) {
+            setFetchError(err.message);
+            setData([]);
+          }
+        } finally {
+          isMounted && setIsLoading(false);
         }
-      } catch (err) {
-        if (isMounted) {
-          setFetchError(err.message);
-          setData([]);
-        }
-      } finally {
-        isMounted && setIsLoading(false);
+      } else {
+        setData(JSON.parse(localStorage.countries));
+        setIsLoading(false);
+        setFetchError(null);
       }
     };
 
